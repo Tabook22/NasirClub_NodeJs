@@ -1,0 +1,10 @@
+<!-- partials/postLst.ejs -->
+<div class="postlst">
+        <h3>List of Posts </h3>
+        <ul>
+            <% for (var pst of posts) {%>
+                <li><%=pst.title %></li>
+            <% } %>
+        </ul>
+      
+    </div>

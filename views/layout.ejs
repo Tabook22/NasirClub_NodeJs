@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Express with EJS</title>
+        <link href="/css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+      
+    </head>
+    <body>
+        <% include partials/header %>
+        <div class="container" style="margin-top:60px;background-color:#eee;">
+            <div class="row>
+                <div class="col-md-12>
+                    <!--indicates where the body of the page should go -->
+                    <%- body %>
+                    <button class="btn btn-danger">click me</button>
+                </div>
+            </div>
+        </div>
+      <% include partials/footer %>
+
+      <!--JaveScript Libararies -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+    </html>
