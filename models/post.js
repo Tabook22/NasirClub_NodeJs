@@ -5,7 +5,7 @@ var Schema=mongoose.Schema;
 var postSchema=new Schema({
     title:{
         type:String,
-        unique:ture,
+        unique:true,
         require:true
     },
     description:{

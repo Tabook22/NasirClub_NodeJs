@@ -2,9 +2,25 @@
 <div class="postlst">
         <h3>List of Posts </h3>
         <ul>
-            <% for (var pst of posts) {%>
-                <li><%=pst.title %></li>
-            <% } %>
+            <li>Post1</li>
+            <li>Post1</li>
+            <li>Post1</li>
+            <li>Post1</li>
         </ul>
-      
+       <table>
+        <thead>
+            <tr>
+                <th>Post Title</th>
+                </th></th>
+            </tr>
+        </thead
+        <tbody>
+        <% for (var post of posts) {%>
+            <tr>
+                <td><%= post.title %></td>
+                <td><a href="#" class="btn btn-default">View</a></td>
+            </tr>
+        <% }%>
+        </tbody>
+       </table>
     </div>

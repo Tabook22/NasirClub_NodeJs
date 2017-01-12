@@ -1,4 +1,4 @@
-//index.js:- This is the default file which gets loaded when you require the routes folder, or any other folder what­so­ever. 
+//routes.js:- This is the default file which gets loaded when you require the routes folder, or any other folder what­so­ever. 
 
 var express=require('express');
 var router=express.Router();
@@ -15,8 +15,9 @@ router.get('/nasser',function(req,res){
 
 //Here we are simply callilng the controller in routes files and simply 
 //using functions in the controller.
-router.route('/postFind').get(postCtrl.getPost);
-router.route('/postList').get(postCtrl.getPostLst);
-router.route('/postAdd').post(postCtrl.postPost);
+router.get('/postFind',postCtrl.getPost);
+router.get('/postList',postCtrl.getPostLst);
+router.get('/postAdd',postCtrl.postPost);
+router.get('/seedPosts',postCtrl.seedPosts);//seed posts to the database to start with
 
 module.exports=router;

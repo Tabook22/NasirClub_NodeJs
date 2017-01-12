@@ -2,12 +2,17 @@
 //The server.js acts as the start­ing point of the appli­ca­tion
 
 //First let us start with main requirements for node applicaiton to work
+
+//Load Environment variables
+require('dotenv').config();
+
 //Requirements Section:-
 var express=require('express');
 var bodyParser=require('body-parser');
 var path=require('path');
 var routes=require('./routes/routes');
 var ejsLayouts = require("express-ejs-layouts");
+var mongoose=require('mongoose');
 var port=process.env.PORT || 3000;
 //-----------------------------------------------------------------------------
 
@@ -26,6 +31,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 //The __dirname is the directory where the current file is located. 
 //So what this means is that public is a directory located in the same directory as the app.js file.
+//----------------------------------------------------------------------------
+
+//connect to our database
+
+mongoose.connect(process.env.DB_URI);
 
 //----------------------------------------------------------------------------
 
