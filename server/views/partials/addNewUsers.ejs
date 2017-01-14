@@ -1,0 +1,22 @@
+<!-- addNewUsers.ejs -->
+<html>
+    <head>
+        <title>My first NodeJS Website</title>
+    </head>
+    <body>
+        <p>Registration page</p>
+
+        <form action="/registerUser" method="post">
+            <p>Name: <input type="text" name="name" /></p>
+            <p>Username <input type="text" name="username" /></p>
+            <p>Password <input type="password" name="password" /></p>
+            <p>User Type: <select name="location">
+            <option name="Admion" value="true">Admin</option>
+            </option name="User" value="false">User</option>
+            </select>
+            <input type="submit" value="Register"/>
+        </form>
+
+        <p><a href="/">Click here to go back.</a> </p>
+    </body>
+</html>

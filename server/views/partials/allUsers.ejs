@@ -1,0 +1,35 @@
+<!-- partials/allUsers.ejs -->
+
+<% if (success.length >0 ){%>
+<div class="alert alert-success"><%=success %></div>
+
+<% } %>
+
+
+<div class="postlst">
+        <h3>List of Posts </h3>
+        <ul>
+            <li>Post1</li>
+            <li>Post1</li>
+            <li>Post1</li>
+            <li>Post1</li>
+        </ul>
+       <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                </th></th>
+            </tr>
+        </thead
+        <tbody>
+        <% for (var usr of users) {%>
+            <tr>
+                <td><%= usr.name %></td>
+                <td><a href="/findUser/<%=usr._id %>" class="btn btn-default">View</a></td>
+                <td><a href="/editUser/<%=usr._id %>/Edit" class="btn btn-default">Edit</a></td>
+                <td><a href="/delUser/<%=usr._id %>/delete" onClick="return confirm('Are you absolutely sure you want to delete?')" class="btn btn-default">Delete</a></td>
+            </tr>
+        <% }%>
+        </tbody>
+       </table>
+    </div>

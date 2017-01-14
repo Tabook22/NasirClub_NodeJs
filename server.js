@@ -1,6 +1,5 @@
 
 //The server.js acts as the start­ing point of the appli­ca­tion
-
 //First let us start with main requirements for node applicaiton to work
 
 //Load Environment variables
@@ -10,19 +9,38 @@ require('dotenv').config();
 var express=require('express');
 var bodyParser=require('body-parser');
 var path=require('path');
-var routes=require('./routes/routes');
+var routes=require('./server/routes/routes');
 var ejsLayouts = require("express-ejs-layouts");
 var mongoose=require('mongoose');
-var port=process.env.PORT || 3000;
+var session=require('express-session');
+var cookieParser=require('cookie-parser');
+var flash =require('connect-flash');
+var port=process.env.PORT || 8000;
 //-----------------------------------------------------------------------------
-
 // Set up the application
 var app = express();
-app.set("port", process.env.PORT || 3000);
-app.set('views', path.join(__dirname,"./views"));
+
+// set session and cookie parser
+app.use(cookieParser()); //we need first to use cookie parser first
+// our session needs to have some default configuration
+app.use(session({
+  secret:process.env.SECRET, //this will be used to sign the session into the cookie and makes sure that this session only used with sith application
+  cookie:{maxAg:60000},
+  resave:false, //forces the sessiont to be saved back to store
+  saveUninitialized:false //don't save unmodified session
+}));
+app.use(flash()); //this will alow us to set flash in our session
+
+
+
+//-----------------------------------------------------------------------------
+
+//View Engine setup
+app.set('views', path.join(__dirname,"./server/views"));
 app.set('view engine','ejs');//set ejs as our templating view engine
 app.use(ejsLayouts);
 //----------------------------------------------------------------------------
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(cookieParser());
@@ -34,7 +52,6 @@ app.use(express.static(__dirname + '/public'));
 //----------------------------------------------------------------------------
 
 //connect to our database
-
 mongoose.connect(process.env.DB_URI);
 
 //----------------------------------------------------------------------------

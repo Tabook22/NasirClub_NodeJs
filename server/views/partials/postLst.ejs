@@ -1,0 +1,28 @@
+<!-- partials/postLst.ejs -->
+<div class="postlst">
+        <h3>List of Posts </h3>
+        <ul>
+            <li>Post1</li>
+            <li>Post1</li>
+            <li>Post1</li>
+            <li>Post1</li>
+        </ul>
+       <table>
+        <thead>
+            <tr>
+                <th>Post Title</th>
+                </th></th>
+            </tr>
+        </thead
+        <tbody>
+        <% for (var post of posts) {%>
+            <tr>
+                <td><%= post.title %></td>
+                <td><a href="/findpost/<%=post._id %>" class="btn btn-default">View</a></td>
+                <td><a href="/findpost/<%=post._id %>/Edit" class="btn btn-default">Edit</a></td>
+                <td><a href="/delPost/<%=post._id %>/delete" onClick="return confirm('Are you absolutely sure you want to delete?')" class="btn btn-default">Delete</a></td>
+            </tr>
+        <% }%>
+        </tbody>
+       </table>
+    </div>
