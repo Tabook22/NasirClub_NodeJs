@@ -4,6 +4,7 @@ var express=require('express');
 var router=express.Router();
 var postController=require('../controllers/postController');
 var userController=require('../controllers/userController');
+var adminController=require('../controllers/adminController');
 
 //Route to the home page ----------------------------------------------------------------------------------
 router.get('/',function(req,res){
@@ -28,6 +29,12 @@ router.get('/addUser',userController.addUser);
 router.get('/editUser',userController.editUser);
 router.get('/delUser',userController.delUser);
 router.post('/registerUser',userController.regUser);
+
+
+//AdminController -----------------------------------------------------------------------------------------
+router.get('/adminPage',adminController.indexView);
+
+
 
 //export router so it will be availabe to be used inside different locaiton in the nodejs application
 module.exports=router;
