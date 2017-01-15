@@ -5,13 +5,11 @@ var router=express.Router();
 var postController=require('../controllers/postController');
 var userController=require('../controllers/userController');
 
+//Route to the home page ----------------------------------------------------------------------------------
 router.get('/',function(req,res){
     res.render("pages/index",{layout:'./layouts/layout'});
     //to change another layout 
     //res.render('pages/index', { layout: 'sidebar-layout' });
-});
-router.get('/nasser',function(req,res){
-    res.send("بسم الله الرحمن الرحيم");
 });
 
 // Post Controller ----------------------------------------------------------------------------------------
