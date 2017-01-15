@@ -12,7 +12,7 @@ router.get('/',function(req,res){
     //res.render('pages/index', { layout: 'sidebar-layout' });
 });
 
-// Post Controller ----------------------------------------------------------------------------------------
+//Post Controller ----------------------------------------------------------------------------------------
 //Here we are simply callilng the controller in routes files and simply 
 //using functions in the controller.
 router.get('/allPost',postController.allPost);

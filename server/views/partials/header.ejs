@@ -1,22 +1,299 @@
 <!-- site header -->
-
-<nav class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
+<!-- start header -->
+<center>
+<table width="960px" id="TixManagementContent" class="TixManagementContent">
+<tbody>
+<tr>
+<td align="left">
+<!-- end header -->
+ 
+<div class="container" style="width:960px;">
+<div class="row">
+    <nav class="navbar navbar-default navbar-justified" role="navigation">  
+    <div class="col-lg-12">  
+    <div class="pull-left"> 
+        <div class="navbar-btn navbar-left">
+            <button class="btn btn-default">
+            <span class="glyphicon glyphicon-align-justify"></span>
+            <span class="label-icon">القائمة</span>
+            </button>
+        </div>        
+        <div class="navbar-btn navbar-left">
+            <button class="btn btn-default">
+        		<span class="glyphicon glyphicon-dashboard"></span>
+				<span class="label-icon">الإدارة</span>
+			</button>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+    </div>     
+    <div class="pull-left" >
+        <form class="navbar-form" role="search">
+            <div class="input-group">               
+                <span class="input-group-btn">
+                    <button id="btn-s" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                       <span class="glyphicon glyphicon-search"></span>
+                        <span class="label-icon">بحث</span>
+                         <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-left" role="menu">
+					   <li>
+							<a href="#">
+								<span class="fa fa-user"></span>
+								<span class="label-icon">بحث بأسم اللاعب</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+							<span class="glyphicon glyphicon-book"></span>
+							<span class="label-icon">بحث عن تقرير</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="glyphicon glyphicon-search"></span>
+								<span class="label-icon">بحث عام</span>
+							</a>
+						</li>
+					</ul>
+                </span>               
+                <input type="text" style="width:350px;" class="form-control">
+                
+                <span class="input-group-btn">
+                    <button id="btn-go" class="btn btn-default" type="button">إبدأ</button>
+                </span>               
+            </div><!-- /input-group -->            
+        </form>  
+    </div> 
+    <div class="pull-right" >   
+        <div class="navbar-nav navbar-btn navbar-right">
+			<div id="rt-drop" class="dropdown">
+				<button class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-cog"></span>
+					<span class="label-icon">التفضيلات</span>
+				</button>
+                 <ul class="dropdown-menu" style="width:300px; padding:0px;">            						
+										<li>										
+										    <form class="form-horizontal" id="preferences" action="" method="post" accept-charset="utf-8">											
+												<hidden input value ="netdna.bootstrapcdn.com/bootswatch/3.1.0/" name="theme_url">
+												<div class="panel panel-default" id="preferences" style="margin:0px;">												
+													<div class="panel-heading">
+														<span class="panel-label">تفضيلات المستخدم</span>
+													</div>										   
+													<div class="panel-body">                    
+                              <div class="form-group">
+																	<label for="nav_theme" class="col-lg-6 control-label" >
+																	Navbar
+																	</label>
+																	<div class="col-lg-6">
+    																	<select class="form-control" id="nav_theme" name="nav_theme">
+    																		<option value="navbar-default">Basic</option>
+    																		<option value="navbar-default">Default</option>
+    																		<option value="navbar-default">Inverse</option>
+    																		<option value="navbar-default">Outline</option>
+    																	</select>
+																	</div>
+																</div>                              
+                               <div class="form-group">
+																	<label for="btn_theme" class="col-lg-6 control-label" >
+																	Button Theme
+																	</label>
+																	<div class="col-lg-6">
+    																	<select class="form-control" id="btn_theme" name="btn_theme">
+    																		<option value="btn-primary">Primary</option>
+    																		<option value="btn-default">Default</option>
+    																		<option value="btn-success">Success</option>
+    																		<option value="btn-info">Info</option>
+                                                                            <option value="btn-warning">Warning</option>
+                                                                             <option value="btn-danger">Danger</option>
+                                                                             <option value="btn-inverse">Inverse</option>
+    																	</select>
+																	</div>
+																</div>
+													
+																<div class="form-group">
+																	<label for="theme_name" class="col-lg-6 control-label">
+																	Theme
+																	</label>
+																	<div class="col-lg-6">
+																		<select class="form-control" id="theme_name" name="theme_name">
+																			<option value="amelia"> Amelia </option>
+																			<option value="bootstrap"> Default </option>
+																			<option value="cerulean"> Cerulean </option>
+																			<option value="cosmo"> Cosmo </option>
+																			<option value="cyborg"> Cyborg </option>
+																			<option value="flatly"> Flatly </option>
+																			<option value="journal"> Journal </option>
+																			<option value="lumen"> Lumen </option>
+																			<option value="readable"> Readable </option>
+																			<option value="simplex"> Simplex </option>
+																			<option value="slate"> Slate </option>
+																			<option value="spacelab"> Spacelab </option>
+																			<option value="superhero"> Superhero </option>
+																			<option value="united"> United </option>
+																			<option value="yeti"> Yeti </option>
+																			<option value="whiteplum"> WhitePlum </option>
+																		</select>
+																	</div>
+																</div>
+  
+																<div class="form-group">
+																	<label for="text_size" class="col-lg-6 control-label">
+																	Display Label
+																	</label>
+																	<div class="col-lg-6">
+																		<div class="btn-group" data-toggle="buttons" style="margin:0px padding:0px;">
+																			<label class="btn btn-default toggle-button" style="pull-left margin:0px padding:0px; width:50%">
+																				<input id="inlineradio1" name="display_label" type="radio" value="">
+																				Show
+																			</label>
+																			<label class="btn btn-default toggle-button" style="pull-right margin:0px padding:0px; width:50%">
+																				<input id="inlineradio2" name="display_label" type="radio" value="hide" >
+																				Hide
+																			</label>
+																		</div>
+																	</div>
+																</div>
+													
+													</div>
+													
+															<div class="panel-footer">
+																<div class="form-group">
+    																	  <button type="submit" class="btn btn-primary btn-block">Update</button> 
+																</div>
+															</div>
+											</form>
+										</li>
+					</ul>
+			 </div>
+         </div>
+        
+		<div class="navbar-btn navbar-right">
+			<div class="dropdown">
+				<button class="btn btn-default  dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-bell"></span>
+					<span class="label-icon">التنبيهات</span>
+				</button>
+			</div>
+		</div>
+     </div> 
+    </div><!-- /.col-lg-6 --> 
+    </div> 
+  </nav>
+ 
+</div> 
+<!--   digital archiving  -------------------------------------------------------------------------------------------------->
+<div class="row">
+  <div class="col-md-12">
+  <div id="digital-arch" class="alert alert-warning" role="alert">
+    <h1 style="text-align:center">الإرشيف الإلكتروني</h1>
+    <img src="/img/club-al-nasr.png" class="nasir-log" />
+  </div>
+
+  </div>
+</div>
+<div class="row">
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="text-align:right;">
+			  <h3 class="panel-title">
+			  <span class="current-theme">نادي النصر الرياضي:  القائمة الرئيسية</span>
+			  </h3>
+			</div>
+
+			<div class="panel-body">
+			
+				<div class="col-lg-2 dash-widget">
+					<div class="label-primary" style="padding: 5px; border-radius: 6px;">
+						<button class="btn btn-primary btn-lg btn-block" role="button" style="padding: 2px;">
+							<div class="fa fa-clock-o fa-3x"></div>
+							<div class="icon-label">Time Zone</div>
+						</button> 
+						<button class="btn btn-primary btn-block" style="height: 40px;">
+							Eastern
+						</button>
+					</div>
+				</div>
+			
+				<div class="col-lg-2 dash-widget">
+				  <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+					<button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+						<div class="fa fa-desktop fa-3x"></div>
+						<div class="icon-label">
+							اللجنة الشبابية
+						</div>
+					</button> 
+					<button class="btn btn-primary btn-block disabled" style="height: 40px;">
+						دخول
+					</button>
+				  </div>
+				</div>
+
+				<div class="col-lg-2 dash-widget">
+					<div class="label-primary" style="padding: 5px; border-radius: 6px;">
+						<button class="btn btn-primary btn-lg btn-block disabled " role="button" style="padding: 2px;">
+							<div class="fa fa-shopping-cart fa-3x"></div>
+								<div class="icon-label">
+							الجنة الإعلامية
+								</div>
+						</button> 
+						<button class="btn btn-primary btn-block active" style="height: 40px;">
+							دخول
+						</button>
+				  </div>
+				</div>
+ 
+				<div class="col-lg-2 dash-widget">
+					<div class="label-primary" style="padding: 5px; border-radius: 6px;">
+						<button class="btn btn-primary btn-lg btn-block active" role="button" style="padding: 2px;">
+							<div class="fa fa-print fa-3x"></div>
+							<div class="icon-label">
+						المالية
+							</div>
+						</button> 
+						<button class="btn btn-primary btn-block disabled" style="height: 40px;">
+						دخول
+						</button>
+					</div>
+				</div>
+				
+				<div class="col-lg-2 dash-widget">
+				  <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+					<button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+						<div class="fa fa-suitcase fa-3x"></div>
+						<div class="icon-label">
+						أمانه السر
+						</div>
+					</button> 
+					<button class="btn btn-primary btn-block" style="height: 40px;">
+				دخول
+					</button>
+				  </div>
+				</div>
+				
+				<div class="col-lg-2 dash-widget">
+					<div class="label-primary" style="padding: 5px; border-radius: 6px;">
+						<button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+							<div class="fa fa-user fa-3x"></div>
+							<div class="icon-label">
+						االجنة الرياضية
+							</div>
+						</button> 
+						<button class="btn btn-inverse btn-block" style="height: 40px;">
+							دخول
+						</button>
+					</div>
+				</div>
+		   
+			</div>
+			
+		</div>
+
+	</div>
+
+
+ 
+</div> 
+
+
+
+
+
+</div> 
